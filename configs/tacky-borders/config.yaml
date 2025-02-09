@@ -1,0 +1,184 @@
+# watch_config_changes: Automatically reload borders whenever the config file is modified.
+watch_config_changes: True
+
+# Global configuration options
+global:
+  # border_width: Width of the border (in pixels)
+  border_width: 3
+
+  # border_offset: Offset of the border from the window edges (in pixels)
+  #   - Negative values shrink the border inwards
+  #   - Positive values expand the border outwards
+  border_offset: -1
+
+  # border-radius: Radius of the border's corners. Supported values:
+  #   - Auto: Automatically determine the radius
+  #   - Square: Sharp corners (radius = 0)
+  #   - Round: Fully rounded corners
+  #   - RoundSmall: Slightly rounded corners
+  #   - Or specify any numeric value for a custom radius
+  border_radius: Auto
+
+  # active_color: the color of the active window's border
+  # inactive_color: the color of the inactive window's border
+  #
+  # Supported color types:
+  #   - Solid: Use a hex code or "accent"
+  #       Example:
+  #         active_color: "#ffffff"
+  #         OR
+  #         active_color: "accent"
+  #   - Gradient: Define colors and direction
+  #       Example:
+  #         active_color:
+  #           colors: ["#000000", "#ffffff"]
+  #           direction: 45deg
+  #         OR
+  #         active_color:
+  #           colors: ["#000000", "#ffffff"]
+  #           direction:
+  #             start: [0.0, 1.0]
+  #             end: [1.0, 0.0]
+  #       NOTE: [0.0, 0.0] = top-left, [1.0, 1.0] = bottom-right
+  active_color:
+    colors: ["#74c7ec", "#7dc4e4", "#85c1dc", "#209fb5"]
+    direction: 45deg
+
+  inactive_color:
+    colors: ["#30304f", "#363c69"]
+    direction:
+      start: [0.0, 1.0]
+      end: [1.0, 0.0]
+
+  # komorebi_colors: Additional integration for komorebi's special window kinds.
+  #   - active_color is used for komorebi's "Single" window kind.
+  #   - inactive_color is used for komorebi's "Unfocused" window kind.
+  komorebi_colors:
+    stack_color: "#e762b7"
+    monocle_color: "#62e793"
+    floating_color: "#f5f5a5"
+    enabled: False
+
+  # animations: Configure animation behavior for window borders
+  #   fps: Animation frame rate
+  #   active: Animations for active windows
+  #   inactive: Animations for inactive windows
+  #
+  # Supported animation types:
+  #   - Spiral
+  #   - ReverseSpiral
+  #   - Fade
+  #
+  # Specify animation types and parameters as follows:
+  #   active:
+  #     - type: Spiral
+  #       duration: 1800
+  #       easing: Linear
+  #
+  #     - type: Fade
+  #       duration: 200
+  #       easing: EaseInOutQuad
+  #
+  # NOTE: Spiral animations may be resource-intensive on low-end systems.
+  animations:
+    active:
+      #- type: ReverseSpiral
+      #  duration: 1800
+      # easing: EaseInOutQuad
+
+      - type: Fade
+        duration: 200
+        easing: EaseInOutQuad
+
+    inactive:
+      # - type: Spiral
+      #   duration: 1800
+      #  easing: EaseInOutQuad
+
+      - type: Fade
+        duration: 200
+        easing: EaseInOutQuad
+
+    fps: 165
+    enabled: True
+
+  # initialize_delay: Time (in ms) before the border appears after opening a new window
+  # unminimize_delay: Time (in ms) before the border appears after unminimizing a window
+  #
+  # These settings help accommodate window animations (e.g., open or unminimize animations).
+  # If window animations are disabled, set these to 0.
+  #
+  # These can also be used to accomodate border animations (e.g., fade animations).
+  initialize_delay: 200
+  unminimize_delay: 150
+
+# Per-application configuration overrides
+window_rules:
+  - match: Class
+    name: "Windows.UI.Core.CoreWindow"
+    enabled: False
+
+  - match: Class
+    name: "XamlExplorerHostIslandWindow"
+    enabled: False
+
+  - match: Title
+    strategy: Contains
+    name: "Zebar"
+    enabled: False
+
+  - match: Title
+    name: "komorebi-bar"
+    enabled: False
+
+  - match: Title
+    name: "keyviz"
+    enabled: False
+
+  - match: Title
+    name: "Picture-in-Picture"
+    enabled: False
+
+  - match: Title
+    name: "Flow.Launcher"
+    enabled: true
+    border_radius: Round
+    animations:
+      active:
+        - type: ReverseSpiral
+          duration: 2800
+          easing: EaseInOutQuad
+
+        - type: Fade
+          duration: 200
+          easing: EaseInOutQuad
+
+      inactive:
+        - type: Spiral
+          duration: 1800
+          easing: EaseInOutQuad
+
+        - type: Fade
+          duration: 200
+          easing: EaseInOutQuad
+
+      fps: 165
+      enabled: True
+    active_color:
+        colors: ["#b4befe", "#89b4fa", "#74c7ec", "#89dceb", "#94e2d5"]
+        direction: 45deg
+        #colors: ["#ff0000", "#89b4fa", "#00ff00"]
+        #direction: 45deg
+     
+
+
+
+  # Example rule:
+  # - match: Class                   # Match based on Class or Title
+  #   name: "MozillaWindowClass"     # Class or title name to match
+  #   strategy: Equals               # Matching strategy: Equals, Contains, or Regex (default: Equals)
+  #   enabled: True                  # Border enabled: True, False, or Auto (default: Auto)
+  #
+  # Notes:
+  #   - Any option in the global config can also be defined in window_rules.
+  #   - If not defined in a rule, settings will fall back to global config values.

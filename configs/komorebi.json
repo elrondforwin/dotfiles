@@ -1,0 +1,126 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.33/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 5,
+  "default_container_padding": 5,
+  "floating_applications": [
+    {
+      "kind": "Exe",
+      "id": "explorer.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "quick-picture-viewer.exe",
+      "matching_strategy": "Equals"       
+    },
+    {
+      "kind": "Exe",
+      "id": "obs64.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Privacy and Network Access Policy",
+      "matching_strategy": "Contains"
+    },
+    {
+      "kind": "Title",
+      "id": "File Converter",
+      "matching_strategy": "Contains"
+    }
+  ],
+  "ignore_rules": [
+    {
+      "kind": "Exe",
+      "id": "fdm.exe",
+      "matching_strategy": "Equals"       
+    }
+  ],
+  "mouse_follows_focus": false,
+  "transparency": true,
+  "transparency_alpha": 240,
+  "transparency_ignore_rules": [
+    {
+      "kind": "Title",
+      "id": "YouTube",
+      "matching_strategy": "Contains"
+    },
+    {
+      "kind": "Title",
+      "id": "Picture",
+      "matching_strategy": "Contains"
+    },
+    {
+      "kind": "Title",
+      "id": "Media Player",
+      "matching_strategy": "Contains"
+    },
+    {
+      "kind": "Exe",
+      "id": "obs64.exe", 
+      "matching_strategy": "Equals"
+    }
+  ],
+  "animation": {
+    "enabled":true,
+    "style": "EaseOutBack",
+    "fps": 120,
+    "duration": 400
+  },
+  "border": false,
+  "stackbar": {
+    "height": 25,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 125,
+      "focused_text": "#74c7ec",
+      "unfocused_text": "#cdd6f4",
+      "background": "#1e1e2e",
+      "font_family": "JetBrainsMono Nerd Font",
+      "font_size": 14
+    }
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP",
+          "workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "zen.exe",
+              "matching_strategy": "Equals"       
+            }
+          ]
+        },
+        {
+          "name": "II",
+          "layout": "BSP",
+          "workspace_rules": [
+          ]
+        },
+        {
+          "name": "III",
+          "layout": "BSP",
+          "workspace_rules":[
+          ]
+        },
+        {
+          "name": "IV",
+          "layout": "BSP",
+          "workspace_rules":[
+
+          ]
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ]
+}
