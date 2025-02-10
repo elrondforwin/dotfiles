@@ -1,9 +1,11 @@
 # <center>Hyprland Inspired Windows Catppuccin Rice</center>
 ### <center>my current desktop dotfiles :p</center>
 
-![](assets/rice.mp4)
 ![](assets/ss1.png)
 ![](assets/ss2.png)
+
+### Quick Showcase Video
+https://www.youtube.com/watch?v=weYnACBLg1w
 
 # Used
 - **Topbar:** [yasb](https://github.com/amnweb/yasb) with my [config](configs/yasb/)
