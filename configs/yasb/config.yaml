@@ -2,9 +2,9 @@ watch_stylesheet: true
 watch_config: true
 debug: false
 komorebi:
-  start_command: "komorebic start --whkd"
-  stop_command: "komorebic stop --whkd"
-  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+  start_command: "komorebic start --whkd --masir"
+  stop_command: "komorebic stop --whkd --masir"
+  reload_command: "komorebic stop --whkd --masir && komorebic start --whkd --masir"
 bars:
   primary-bar:
     enabled: true
@@ -27,76 +27,62 @@ bars:
       height: 28
     padding:
       top: 10
-      left: 7
-      bottom: 5
-      right: 7
+      left: 12
+      bottom: 0
+      right: 12
     widgets:
       left:
         [
-          "active_window",
+          "home",
+          "komorebi_workspaces",
           "traffic",
           "weather"
         ]
       center:
-        ["komorebi_workspaces"]
+        ["active_window"]
       right:
         [
           "media",
           "volume",
           "clock",
+          "disk",
+          "wallpapers",
           "power_menu"
         ]
 widgets:
-  media:
-    type: "yasb.media.MediaWidget"
+  home:
+    type: "yasb.home.HomeWidget"
     options:
-      label: "{title}"
-      label_alt: "{artist}"
-      hide_empty: true
-      callbacks:
-        on_left: "toggle_label"
-        on_middle: "toggle_label"
-        on_right: "toggle_label"
-      max_field_size:
-        label: 25
-        label_alt: 30
-      show_thumbnail: false
-      controls_only: false
-      controls_left: true
-      thumbnail_alpha: 80
-      thumbnail_padding: 8
-      thumbnail_corner_radius: 16
-      icons:
-          prev_track: "\ue892"
-          next_track: "\ue893"
-          play: "\ue768"
-          pause: "\ue769"
-  language:
-    type: "yasb.language.LanguageWidget"
-    options:
-      label: "<span>\uf11c</span>{lang[country_code]}"
-      update_interval: 5
-      callbacks:
-        on_left: "do_nothing"
-        on_middle: "do_nothing"
-        on_right: "do_nothing"
-  active_window:
-    type: "yasb.active_window.ActiveWindowWidget"
-    options:
-      label: "{win[title]}"
-      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
-      label_no_window: ""
-      label_icon: true
-      label_icon_size: 14
-      max_length: 25
-      max_length_ellipsis: "..."
-      monitor_exclusive: true
-  clock:
-    type: "yasb.clock.ClockWidget"
-    options:
-      label: "<span>\udb83\ude17</span>{%a %b %d %H:%M}"
-      label_alt: "<span>\udb83\ude17</span>{%A, %d %B %Y %H:%M}"
-      timezones: []
+      label: "<span>\udb80\udf5c</span>"
+      menu_list:
+      - { title: "Home", path: "~" }
+      - { title: "Downloads", path: "C:\\Users\\elrond\\Downloads"}
+      - { title: "Documents", path: "C:\\Users\\elrond\\Documents"}
+      - { title: "Pictures", path: "C:\\Users\\elrond\\Pictures"}
+      - { title: "Videos", path: "C:\\Users\\elrond\\Videos"}
+      system_menu: true
+      power_menu: false
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: ""
+      distance: 10
+      container_padding: 
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      alignment: "left"
+      direction: "down"
+      menu_labels:
+        shutdown: "Shutdown"
+        restart: "Restart"
+        logout: "Logout"
+        lock: "Lock"
+        sleep: "Sleep"
+        system: "System Settings"
+        about: "About This PC"
+        task_manager: "Task Manager"
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -109,6 +95,15 @@ widgets:
         hide_empty_workspaces: false
         hide_if_offline: false
         animation: true
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "<span>\udb82\udcfa</span> \uea9a{download_speed} \ueaa1{upload_speed}"
+      label_alt: "<span>\udb82\udcfa</span> Download {download_speed} | Upload {upload_speed}"
+      update_interval: 1000
+      callbacks:
+        on_left: 'toggle_label'
+        on_right: 'exec cmd /c Taskmgr'   
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -130,7 +125,38 @@ widgets:
         snowyIcyDay: "\udb81\udd99"
         snowyIcyNight: "\udb81\udd99"
         blizzard: "\udb81\udd99"
-        default: "\udb81\udd99"
+        default: "\udb81\udd99" 
+  media:
+      type: "yasb.media.MediaWidget"
+      options:
+        label: "{title}"
+        label_alt: "{artist}"
+        max_field_size:
+          label: 25
+          label_alt: 25
+        show_thumbnail: false
+        controls_only: false
+        controls_left: true
+        hide_empty: true
+        thumbnail_alpha: 250
+        thumbnail_padding: 8
+        thumbnail_corner_radius: 0
+        icons:
+          prev_track: ""
+          next_track: ""
+          play: "<span>\uf001</span>"
+          pause: "<span>\uf001</span>"
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 14
+      max_length: 36
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -144,51 +170,64 @@ widgets:
         - "\uf028"  # Icon for 61-100% volume
       callbacks:
         on_right: "exec cmd.exe /c start ms-settings:sound"
-  power_menu:
-    type: "yasb.power_menu.PowerMenuWidget"
+  clock:
+    type: "yasb.clock.ClockWidget"
     options:
-      label: "<span>\uf011</span>"
-      uptime: True
-      blur: False
-      blur_background: True
-      animation_duration: 200 # Milisecond 
-      button_row: 5 # Number of buttons in row, min 1 max 5
-      buttons:
-        shutdown: ["\uf011","Shut Down"]
-        restart: ["\uead2","Restart"]
-        signout: ["\udb80\udf43","Sign out"]
-        hibernate: ["\uf28e","Hibernate"]
-        sleep: ["\u23fe","Sleep"]
-        cancel: ["","Cancel"]
-  taskbar:
-    type: "yasb.taskbar.TaskbarWidget"
+      label: "<span>\udb83\ude17</span>{%a %b %d %H:%M}"
+      label_alt: "<span>\udb83\ude17</span>{%A, %d %B %Y %H:%M}"
+      timezones: []
+  disk:
+    type: "yasb.disk.DiskWidget"
     options:
-      animation:
+        label: "<span>\uf473</span>"
+        label_alt: "<span>\uf473</span>"
+        update_interval: 60
+        group_label:
+          volume_labels: ["C", "D", "E", "F"]
+          show_label_name: false
+          blur: True
+          round_corners: True
+          round_corners_type: "small"
+          border_color: "System"
+          alignment: "right"
+          direction: "down"
+          distance: 6
+        callbacks:
+          on_left: "toggle_group"
+          on_middle: "toggle_label"
+          on_right: "exec explorer C:\\" # Open disk C in file explorer
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\udb83\ude09</span>"
+      image_path: "C:\\Users\\elrond\\.config\\Wallpapers"
+      change_automatically: false
+      update_interval: 60
+      gallery:
         enabled: true
-      icon_size: 14
-      ignore_apps:
-        processes: []
-        titles: []
-        classes: []
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-  win_button:
-    type: "yasb.custom.CustomWidget"
-    options:
-      label: "<span>\udb80\udf5c</span>"
-      label_alt: "<span>\udb80\udf5c</span>"
-      class_name: "win-btn"
-      callbacks:
-        on_left: "exec start_menu"
-  traffic:
-    type: "yasb.traffic.TrafficWidget"
-    options:
-      label: "<span>\udb82\udcfa</span> \uea9a{download_speed} \ueaa1{upload_speed}"
-      label_alt: "<span>\udb82\udcfa</span> Download {download_speed} | Upload {upload_speed}"
-      update_interval: 1000
-      callbacks:
-        on_left: 'toggle_label'
-        on_right: 'exec cmd /c Taskmgr'
+        blur: true
+        image_width: 296
+        image_per_page: 6
+        show_buttons: true
+        orientation: "portrait"
+        image_spacing: 10
+        lazy_load: true
+        lazy_load_delay: 10
+        lazy_load_fadein: 200
+        image_corner_radius: 20
+        enable_cache: true
+  power_menu:
+      type: "yasb.power_menu.PowerMenuWidget"
+      options:
+        label: "\uf011"
+        uptime: True
+        blur: False
+        blur_background: True
+        animation_duration: 250 # Milisecond 
+        button_row: 5 # Number of buttons in row, min 1 max 5
+        buttons:
+          signout: ["\udb80\udf43","Sign out"]
+          shutdown: ["\uf011","Shut Down"]
+          restart: ["\uead2","Restart"]
+          hibernate: ["\uf28e","Hibernate"]
+          cancel: ["\udb81\udf3a","Cancel"]

@@ -4,7 +4,7 @@ watch_config_changes: True
 # Global configuration options
 global:
   # border_width: Width of the border (in pixels)
-  border_width: 3
+  border_width: 2
 
   # border_offset: Offset of the border from the window edges (in pixels)
   #   - Negative values shrink the border inwards
@@ -18,6 +18,7 @@ global:
   #   - RoundSmall: Slightly rounded corners
   #   - Or specify any numeric value for a custom radius
   border_radius: Auto
+  #   - Auto: 8 for me (configured yasb css' to match with these)
 
   # active_color: the color of the active window's border
   # inactive_color: the color of the inactive window's border
@@ -41,8 +42,11 @@ global:
   #             end: [1.0, 0.0]
   #       NOTE: [0.0, 0.0] = top-left, [1.0, 1.0] = bottom-right
   active_color:
-    colors: ["#74c7ec", "#7dc4e4", "#85c1dc", "#209fb5"]
-    direction: 45deg
+    colors: ["#94e2d5", "#89dceb"] 
+    direction: -90deg
+    # direction:
+    #   start: [0.0, 0.5]
+    #   end: [0.5, 1.0]
 
   inactive_color:
     colors: ["#30304f", "#363c69"]
@@ -54,10 +58,10 @@ global:
   #   - active_color is used for komorebi's "Single" window kind.
   #   - inactive_color is used for komorebi's "Unfocused" window kind.
   komorebi_colors:
-    stack_color: "#e762b7"
+    stack_color: "#cba6f7"
     monocle_color: "#62e793"
-    floating_color: "#f5f5a5"
-    enabled: False
+    floating_color: "#fab387"
+    enabled: True
 
   # animations: Configure animation behavior for window borders
   #   fps: Animation frame rate
@@ -138,6 +142,30 @@ window_rules:
   - match: Title
     name: "Picture-in-Picture"
     enabled: False
+  
+  - match: Title
+    name: "Save As"
+    enabled: False
+
+  - match: Title
+    name: "Pixel Layer Bar"
+    enabled: False
+
+  - match: Title
+    name: "New Document"
+    enabled: False
+
+  - match: Title
+    name: "Camera Raw 17.1"
+    enabled: False
+
+  - match: Class
+    name: "Photoshop"
+    enabled: False
+ 
+  - match: Class
+    name: "Illustrator"
+    enabled: False
 
   - match: Title
     name: "Flow.Launcher"
@@ -146,7 +174,7 @@ window_rules:
     animations:
       active:
         - type: ReverseSpiral
-          duration: 2800
+          duration: 5000
           easing: EaseInOutQuad
 
         - type: Fade
@@ -165,14 +193,11 @@ window_rules:
       fps: 165
       enabled: True
     active_color:
-        colors: ["#b4befe", "#89b4fa", "#74c7ec", "#89dceb", "#94e2d5"]
+        colors: ["#94e2d5", "#89dceb", "#cba6f7", "#f38ba8", "#fab387"]
         direction: 45deg
         #colors: ["#ff0000", "#89b4fa", "#00ff00"]
         #direction: 45deg
-     
-
-
-
+        
   # Example rule:
   # - match: Class                   # Match based on Class or Title
   #   name: "MozillaWindowClass"     # Class or title name to match

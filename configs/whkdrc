@@ -10,7 +10,7 @@ win + shift + o         : komorebic reload-configuration
 # win + f                 : if ($wshell.AppActivate('Firefox') -eq $False) { start firefox }
 
 win + q                 : komorebic close
-win + t                 : komorebic minimize
+win + space             : komorebic minimize
 
 # Focus windows
 # win + shift + left              : komorebic focus left
@@ -32,7 +32,7 @@ win + left              : komorebic stack left
 win + down              : komorebic stack down
 win + up                : komorebic stack up
 win + right             : komorebic stack right
-win + shift + down      : komorebic unstack # oem_1 is ;
+win + shift + space     : komorebic unstack # oem_1 is ;
 win + shift + tab       : komorebic cycle-stack previous # oem_4 is [
 win + tab               : komorebic cycle-stack next # oem_6 is ]
 

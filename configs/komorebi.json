@@ -1,10 +1,17 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.33/schema.json",
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
-  "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
+  "window_hiding_behaviour":"Cloak",
   "default_workspace_padding": 5,
   "default_container_padding": 5,
+  "remove_titlebar_applications": [
+    {
+      "kind": "Exe",
+      "id": "wt.exe",
+      "matching_strategy": "Equals"
+    }
+  ],
   "floating_applications": [
     {
       "kind": "Exe",
@@ -30,6 +37,31 @@
       "kind": "Title",
       "id": "File Converter",
       "matching_strategy": "Contains"
+    },
+    {
+      "kind": "Exe",
+      "id": "StartAllBackCfg.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Photoshop.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Illustrator.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "ImageGlass.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Screenbox",
+      "matching_strategy": "Equals"
     }
   ],
   "ignore_rules": [
@@ -37,6 +69,11 @@
       "kind": "Exe",
       "id": "fdm.exe",
       "matching_strategy": "Equals"       
+    },
+    {
+      "kind": "Exe",
+      "id": "Yasb.exe",
+      "matching_strategy": "Equals"
     }
   ],
   "mouse_follows_focus": false,
@@ -62,6 +99,16 @@
       "kind": "Exe",
       "id": "obs64.exe", 
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Photoshop.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Illustrator.exe",
+      "matching_strategy": "Equals"
     }
   ],
   "animation": {
@@ -73,7 +120,7 @@
   "border": false,
   "stackbar": {
     "height": 25,
-    "mode": "OnStack",
+    "mode": "Never",
     "tabs": {
       "width": 125,
       "focused_text": "#74c7ec",
