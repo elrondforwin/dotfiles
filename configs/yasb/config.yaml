@@ -2,9 +2,9 @@ watch_stylesheet: true
 watch_config: true
 debug: false
 komorebi:
-  start_command: "komorebic start --whkd --masir"
-  stop_command: "komorebic stop --whkd --masir"
-  reload_command: "komorebic stop --whkd --masir && komorebic start --whkd --masir"
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd"
 bars:
   primary-bar:
     enabled: true
@@ -14,7 +14,7 @@ bars:
       position: "top"
       center: false
     blur_effect:
-      enabled: False
+      enabled: false
       acrylic: false
       dark_mode: false
       round_corners: false
@@ -26,10 +26,10 @@ bars:
       width: "100%"
       height: 28
     padding:
-      top: 10
-      left: 12
-      bottom: 0
-      right: 12
+      top: 12
+      left: 4
+      bottom: 4
+      right: 4
     widgets:
       left:
         [
@@ -98,7 +98,7 @@ widgets:
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
-      label: "<span>\udb82\udcfa</span> \uea9a{download_speed} \ueaa1{upload_speed}"
+      label: "<span>\udb82\udcfa</span> \uea9a  {download_speed}  \ueaa1  {upload_speed}"
       label_alt: "<span>\udb82\udcfa</span> Download {download_speed} | Upload {upload_speed}"
       update_interval: 1000
       callbacks:
@@ -115,7 +115,7 @@ widgets:
       location: 'Samsun'
       callbacks:
         on_left: "toggle_label"
-      icons: 
+      icons:
         sunnyDay: "\udb81\udd99"
         clearNight: "\udb81\udd99"
         cloudyDay: "\udb81\udd99"

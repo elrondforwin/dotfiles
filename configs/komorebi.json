@@ -3,8 +3,8 @@
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
   "cross_monitor_move_behaviour": "Insert",
   "window_hiding_behaviour":"Cloak",
-  "default_workspace_padding": 5,
-  "default_container_padding": 5,
+  "default_workspace_padding": 2,
+  "default_container_padding": 2,
   "remove_titlebar_applications": [
     {
       "kind": "Exe",
