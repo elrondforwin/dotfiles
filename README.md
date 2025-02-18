@@ -16,6 +16,7 @@ https://www.youtube.com/watch?v=weYnACBLg1w
 - **Wallpaper showed in the video:** [Minecraft Sunset 4K](https://steamcommunity.com/sharedfiles/filedetails/?id=3270848940)
 - **Context Menu:** [Nilesoft Shell](https://github.com/moudey/Shell) with my [config](configs/nilesoft-shell/theme.nss)
 - **Hatsune Miku in the explorer:** [explorertool](https://github.com/Maplespe/explorerTool)
+- **Icon Pack:** [Catppuccin Teal](https://github.com/niivu/resource-redirect-icon-themes/blob/main/Resource%20Redirect%20themes/Catppuccin%20teal.zip) applied with [Windhawk's Resource Redirect](https://windhawk.net/mods/icon-resource-redirect) (note that when I took the screenshots, icon pack was not installed.)
 - **Taskbar:** [StartAllBack](https://www.startallback.com/) with my [settings](settings/startallback)
 - **Spotify:** Spiced up with [spicetify](https://spicetify.app/), applied a theme named [text](https://imgur.com/a/OysmIjthttps://imgur.com/a/OysmIjt) and selected CatppuccinMauve option in the marketplace tab
 
@@ -27,4 +28,3 @@ https://www.youtube.com/watch?v=weYnACBLg1w
 - **Other Apps Themes:** They are all from [Catppuccin Ports](https://catppuccin.com/ports)
 * I generally used things in the [niivu's theme installation guide, extra info section](https://www.deviantart.com/niivu/art/How-to-install-Windows-10-or-11-Themes-708835586) like [OldNewExplorer](https://msfn.org/board/topic/170375-oldnewexplorer-119/)
 * Applied some settings in the theme folder which you can access with downloading the [theme](https://www.deviantart.com/niivu/art/Catppuccin-for-Windows-11-1076249390).
-* I don't use custom icons, if you know good icon packs that can fit these rice, please let me know.
