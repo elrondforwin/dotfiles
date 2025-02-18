@@ -18,6 +18,7 @@ https://www.youtube.com/watch?v=weYnACBLg1w
 - **Hatsune Miku in the explorer:** [explorertool](https://github.com/Maplespe/explorerTool)
 - **Taskbar:** [StartAllBack](https://www.startallback.com/) with my [settings](settings/startallback)
 - **Spotify:** Spiced up with [spicetify](https://spicetify.app/), applied a theme named [text](https://imgur.com/a/OysmIjthttps://imgur.com/a/OysmIjt) and selected CatppuccinMauve option in the marketplace tab
+- **Icons:** [Trace Icons](https://www.deviantart.com/kdr3w/art/Trace-Icons-817909296)
 
 ## **Other Tweaks and Notes**
 - **Website themes:** [Stylus Themes](configs/stylus/stylus-2025-02-15.json)
@@ -27,4 +28,3 @@ https://www.youtube.com/watch?v=weYnACBLg1w
 - **Other Apps Themes:** They are all from [Catppuccin Ports](https://catppuccin.com/ports)
 * I generally used things in the [niivu's theme installation guide, extra info section](https://www.deviantart.com/niivu/art/How-to-install-Windows-10-or-11-Themes-708835586) like [OldNewExplorer](https://msfn.org/board/topic/170375-oldnewexplorer-119/)
 * Applied some settings in the theme folder which you can access with downloading the [theme](https://www.deviantart.com/niivu/art/Catppuccin-for-Windows-11-1076249390).
-* I don't use custom icons, if you know good icon packs that can fit these rice, please let me know.
