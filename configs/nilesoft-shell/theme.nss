@@ -7,8 +7,8 @@ theme
 	background
 	{
 		color = #1e1e2e
-		opacity = 80
-		effect = 3
+		opacity = 100
+		effect = 1
 	}
 
 	item
@@ -46,7 +46,7 @@ theme
 		size = 2
 		color = #94e2d5
 		opacity = 60
-		radius = 2
+		radius = 1
 	}
 
 	shadow

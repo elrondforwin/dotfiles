@@ -1,4 +1,4 @@
-/*VARIABLES AND SOME DEFAULT SETTINGS*/
+ /*VARIABLES AND SOME DEFAULT SETTINGS*/
 :root {
     --rosewater: #f5e0dc;
     --flamingo: #f2cdcd;
@@ -24,61 +24,55 @@
     --overlay0: #6c7086;
     --surface2: #585b70;
     --surface1: #45475a;
-    --surface0: #282936;
+    --surface1: #282936;
     --base: #1e1e2e;
-    --mantle: rgba(24, 24, 37, 0.5);
-    --crust: rgba(17, 17, 27, 0.5);
+    --winbutton: #565178;
+    --icon: #b5c7d7;
+    --basetransparent: rgba(30, 30, 46, 0.6);
+    --mantle: rgba(24, 24, 37, 1);
+    --crust: rgba(17, 17, 27, 1);
 }
 *{
     font-size: 12px;
-    color: #bec8e7;
-    font-weight: 500;
+    color: var(--text);
+    font-weight: 600;
     font-family: "JetBrainsMono NFP";
     margin: 0;
     padding: 0;
 }
 /*GENERAL CONFIGRATIONS*/
 .yasb-bar {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
+    background-color: var(--base);
 }
 .widget {
-    padding: 0 8px;
+    padding: 0 4px;
     margin: 0 4px;
-    border-radius: 8px;
+    border-radius: 0px;
+    border: 1px solid rgba(128, 128, 128, 0);
 }
 .widget .icon {
     font-size: 18px;
 }
-/*HOME WIDGET*/
+.widget .label {
+    color: var(--text);
+}
+/*WIDGET*/
 .home-widget {
-    padding: 0 6px 0 6px;
-    background: var(--peachedit2);
-}
-.home-widget:hover {
-    background: #ca9c58;
-}
-.home-widget .icon {
-    color: var(--surface0)
-}
-.home-widget .icon:hover {
-    color: var(--surface1)
+    padding-bottom: 1px;
 }
 /*HOME WIDGET DROPDOWN*/
 .home-menu {
-    background-color: rgba(34, 31, 46, 0.4);
-    border-radius: 8px;
-    border-color: var(--teal);
-    border-style: solid;
-    border-width: 2px;
+    background-color: var(--mantle);
     padding: 0;
     margin-left: 0px;
+    border: 1px var(--teal) solid;
 }
 .home-menu .menu-item {
     padding: 6px 48px 7px 16px;
     font-size: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text); 
     font-weight: 600;
 }
 .home-menu .menu-item:hover {
@@ -91,136 +85,105 @@
 }
 /*KOMOREBI WORKSPACES WIDGET*/
 .komorebi-workspaces {
-    background-color: #221f2e;
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(--teal);
-}
-.komorebi-workspaces .offline-status {
-    color: #627199;
-    font-size: 12px;
-    padding: 0 4px;
-    font-weight: 600;
+    padding: 0 0px;
 }
 .komorebi-workspaces .ws-btn {
+	font-size: 14px;
     border: none;
-    background-color: #9cd1dd;
-    margin: 0px 4px;
-    padding: 0;
-    color: rgba(0, 0, 0, 0);
-    border-radius: 5px;
-    height: 10px;
-    width: 10px;
+    color: #6c7086;
+	margin: 0 0px 0 0px;
+    height: 30px;
+    padding: 0 12px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0);
 }
 .komorebi-workspaces .ws-btn:hover {
-    background-color: var(--lavender)
+    color: #7f849c;
+    border-bottom: 1px solid #7f849c;
 }
 .komorebi-workspaces .ws-btn.populated {
-    background-color: var(--red);
-}
-.komorebi-workspaces .ws-btn.populated:hover {
-    background-color: #c2647e;
+	color: #b4befe;
 }
 .komorebi-workspaces .ws-btn.active {
-    color: rgba(149, 177, 255, 0);
-    background-color: var(--mauve);
-    width: 36px;
-    height: 10px;
-    border-radius: 4px;
-}
-/*NETWORK WIDGET*/
-.traffic-widget {
-    background-color: var(--sky);
-    padding: 0;
-}
-.traffic-widget .icon {
-    color: #142123;
-    padding-right: 6px;
-    padding-left: 6px;
-}
-.traffic-widget .label {
-    font-size: 14px;
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #221f2e;
-    margin: 2px;
-    border-radius: 8px;
-    padding: 0 6px;
-    color: var(--sky)
+    color: #94e2d5;
+    font-weight: 900;
+    border-bottom-color: #94e2d5;
 }
 /*WEATHER WIDGET*/
 .weather-widget {
-    background-color: var(--peach);
     padding: 0;
+    padding-left: -5
 }
 .weather-widget .icon {
-    color: #142123;
-    padding: 0 6px;
+    color: var(--yellow);
+    padding: 6px;
 }
 .weather-widget .label {
     font-size: 14px;
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #221f2e;
-    color: var(--peach);
-    padding: 0 6px;
-    margin: 2px;
+    font-family: Bahnschrift;
+}
+/* WEATHER DROPDOWN */
+.weather-card {
+    background-color: rgba(17, 17, 27, 0.5);
+}
+.weather-card-today {
+    border: 1px solid #282936;
     border-radius: 8px;
+    background-color:  rgba(17, 17, 27, 0.2);
+}
+.weather-card-today .label {
+    font-size: 12px;
+    font-family: Segoe UI;
+}
+.weather-card-today .label.location {
+    font-size: 24px;
+    font-weight: 700;
+}
+.weather-card-today .label.arert {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: rgba(247, 199, 42, 0.05);
+    border: 1px solid rgba(247, 209, 42, 0.1);
+    color: rgba(196, 181, 162, 0.85);
+    border-radius: 6px;
+    padding: 5px 0;
+}
+.weather-card-day {
+    border: 1px solid #45475a;
+    border-radius: 8px;
+    background-color:  rgba(17, 17, 27, 0.2);
+}
+.weather-card-day .label {
+    font-size: 12px;
+    font-family: Segoe UI;
 }
 /*ACTIVE WINDOW WIDGET*/
-.active-window-widget {
-    background-color: var(--mauve);
-    padding: 0;
-}
 .active-window-widget .label {
     font-size: 14px;
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--mauve);
-    background-color: #221f2e;
-    padding: 0 8px;
-    margin: 2px;
-    border-radius: 8px;
+    font-family: Bahnschrift;
 }
 .active-window-widget .icon {
-    padding: 0 8px;
+    padding-right: 6px;
     border: none;
-    margin: 0;
-    background-color: var(--mauve)
 }
 /*CLOCK - CALENDAR WIDGET*/
-.clock-widget {
-    background-color: var(--teal);
-    padding: 0;
-}
-.clock-widget .icon {
-    color: #142123;
-    padding: 0 6px;
-}
 .clock-widget .label {
     font-size: 14px;
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #221f2e;
-    color: var(--teal);
-    padding: 0 6px;
-    margin: 2px;
-    border-radius: 8px;
+    font-family: Bahnschrift;
 }
 /*CLOCK - CALENDAR WIDGET DROPDOWN*/
 .calendar {
-    background-color:rgba(34, 31, 46, 0.5);
-    border: 2px solid var(--teal);
-    border-radius: 8px;
+    background-color: var(--mantle);
+    border: 1px solid var(--teal);
 }
 .calendar .calendar-table,
 .calendar .calendar-table::item {
-    background-color:rgba(34, 31, 46, 0.5);
-    color: rgba(205, 214, 244, 0.4);
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(162, 177, 196, 0.85);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     border: none;
     outline: none;  
-}
-.calendar .calendar-table::item:hover {
-    color: rgba(164, 172, 197, 0.4);
 }
 .calendar .calendar-table::item:selected {
     color: rgb(255, 255, 255);
@@ -249,22 +212,12 @@
 }
 /*DISK WIDGET*/
 .disk-widget {
-    padding: 0 6px 0 6px;
-    background: var(--teal);
-}
-.disk-widget:hover {
-    background: #6abbad;
-}
-.disk-widget .icon {
-    color: var(--surface0)
+    padding: 0;
 }
 /*DISK DROPDOWN*/
 .disk-group {
-    background-color:rgba(34, 31, 46, 0.4);    
-    border-color: var(--teal);
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 8px;
+    background-color: var(--mantle);   
+    border: 1px solid var(--teal);
 }
 .disk-group-row {
     min-width: 220px;
@@ -272,7 +225,7 @@
     max-height: 40px;
     margin: 0;
     padding: 0;
-    border-radius: 6px;
+    border-radius: 0px;
     border: 1px solid rgba(128, 128, 128, 0);
 }
 .disk-group-row:hover {
@@ -283,54 +236,44 @@
     max-height: 8px;
     border:0px solid rgba(128, 128, 128, 0);
     background-color: rgba(148, 226, 213, 0.3);
-    border-radius: 4px;
+    border-radius: 0px;
 }
 .disk-group-label-bar::chunk{
     background-color: rgba(148, 226, 213, 1);
-    border-radius: 4px;
+    border-radius: 0px;
 }
 .disk-group-label {
     font-size: 13px;
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
 }
 .disk-group-label-size {
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
     color: rgba(205, 214, 244, 0.5);
 }
 /*AUDIO WIDGET*/
 .volume-widget {
-    background-color: var(--red);
+    margin-left: 0;
     padding: 0;
 }
 .volume-widget .icon {
-    color: #142123;
     padding: 0 6px;
+    color: var(--teal);
 }
 .volume-widget .label {
     font-size: 14px;
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #221f2e;
-    color: var(--red);
-    padding: 0 8px;
-    margin: 2px;
-    border-radius: 8px;
+    font-family: Bahnschrift;
 }
 /*AUDIO DROPDOWN*/
 .audio-menu {
-    background-color:rgba(34, 31, 46, 0.5);
-    border: 2px solid var(--teal);
-    border-radius: 8px;
+    background-color: var(--mantle);
 }
 .audio-container .device {
-    font-size: 20px;
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
-    background-color:transparent;
+    font-family: Bahnschrift;
+    background-color: transparent;
     border: none;
     padding:6px 8px 6px 4px;
     margin: 2px 0;
-    font-size: 12px;
-    border-radius: 4px;
+    font-size: 14px;
+    border-radius: 0px;
 }
 .audio-container .device.selected {
     background-color: rgba(255, 255, 255, 0.085);
@@ -338,49 +281,31 @@
 .audio-container .device:hover {
     background-color: rgba(255, 255, 255, 0.06);
 }
+
 /*MEDIA WIDGET*/
 .media-widget {
 	padding: 0;
-	margin: 0;
-    margin-right: 4px;
-    background-color: var(--peach)
 }
 .media-widget .label {
+    font-family: Bahnschrift;
     font-size: 14px;
-    font-family: 'Bahnschrift', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #221f2e;
-    color: var(--peach);
-    padding: 0 8px;
-    margin: 2px;
-    border-radius: 8px;
+    padding: 0 0px;
 }
 .media-widget .btn {
-	padding: 0;
-	margin: 0 0px;
-    padding-left: 0px;
-    color: #221f2e;
+    color: var(--teal);
 }
 .media-widget .icon{
     padding: 0 6px;
 }
 /*WALLPAPERS WIDGET*/
 .wallpapers-widget {
-    padding: 0 6px 0 6px;
-    background: var(--sky);
-}
-.wallpapers-widget:hover {
-    background: #66bbca;
-}
-.wallpapers-widget .icon{
-    color: #142123;
+    padding: 0;
 }
 /*WALLPAPERS GALLERY*/
 .wallpapers-gallery-window {
-    background-color: rgba(17, 17, 27, 0.6);
+    background-color: var(--mantle);
     border: 0;
     margin: 0;
-    border: 2px solid var(--teal);
-    border-radius: 8px;
 }
 .wallpapers-gallery-buttons {
     font-size: 12px;
@@ -399,7 +324,7 @@
 }
 .wallpapers-gallery-image {
     border: 4px solid transparent;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 .wallpapers-gallery-image:hover {
     border: 4px solid rgb(66, 68, 83);
@@ -409,17 +334,11 @@
 }
 /*POWER WIDGET*/
 .power-menu-widget {
-    background-color: var(--red);
-    padding: 0;
-}
-.power-menu-widget:hover {
-    background-color: #d16483;
+    padding-left: 0;
 }
 .power-menu-widget .label {
-    color: #142123;
-    padding: 0 8px;
-    font-weight: bold;
-    font-size: 14px;
+	color: var(--red);
+    font-size: 16px;
 }
 /*POWER MENU POPUP*/
 .uptime {
@@ -429,14 +348,11 @@
 	font-weight: 600;
 	font-family: "Bahnschrift", Tahoma, Geneva, Verdana, sans-serif;
 }
-.power-menu-widget .label {
-	color: var(--surface0);
-}
 .power-menu-popup .button {
 	padding: 0;
 	width: 160px;
 	height: 240px;
-	border-radius: 4px;
+	border-radius: 0px;
 	background-color: rgba(41, 42, 58, 0.75);
 	font-family: "Bahnscrift", Tahoma, Geneva, Verdana, sans-serif;
 	color: white;
@@ -464,4 +380,78 @@
 }
 .power-menu-popup .button.cancel .label {
 	color: rgba(243, 139, 168, 0.95);
+}
+.cava-widget {
+    padding: 0;
+    margin-right: 0;
+}
+/*GITHUB WIDGET*/
+.github-widget {
+    padding: 0;
+}
+.github-widget .icon {
+    font-size: 16px;
+}
+/*GITHUB DROPDOWN*/
+.github-menu    {
+    background-color:  rgba(17, 17, 27, 0.2);
+    max-height: 500px;
+    min-height: 500px;
+    min-width: 420px;
+}
+.github-menu .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 8px;
+    color: white;
+    background-color: rgba(17, 17, 27, 0.75);
+}
+.github-menu .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    padding: 4px 8px 6px 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #9399b2;
+    background-color: rgba(17, 17, 27, 0.75);
+}
+.github-menu .contents {
+    background-color:  rgba(17, 17, 27, 0.2);
+}
+.github-menu .contents .item {
+    min-height: 40px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+}
+.github-menu .contents .item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.github-menu .contents .item .title,
+.github-menu .contents .item .description {
+    color: #9399b2;
+    font-family: Segoe UI;
+}
+.github-menu .contents .item .title {
+    font-size: 14px;
+    font-weight: 600; 
+}
+.github-menu .contents .item .description {
+    font-size: 12px;
+    font-weight: 500
+}
+.github-menu .contents .item.new .title,
+.github-menu .contents .item.new .description {
+    color: #ffffff
+}
+.github-menu .contents .item .icon {
+    font-size: 16px;
+    padding-right: 0;
+    padding-left: 8px;
+    padding-right: 4px;
+    color: #9399b2;
+}
+.github-menu .contents .item.new .icon {
+    color: #3fb950;
 }

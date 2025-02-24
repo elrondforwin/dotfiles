@@ -14,37 +14,39 @@ bars:
       position: "top"
       center: false
     blur_effect:
-      enabled: false
+      enabled: true
       acrylic: false
-      dark_mode: false
+      dark_mode: true
       round_corners: false
       border_color: None
     window_flags:
-      always_on_top: false
+      always_on_top: true
       windows_app_bar: true
+      hide_on_fullscreen: true
     dimensions:
       width: "100%"
-      height: 28
+      height: 30
     padding:
-      top: 12
-      left: 4
-      bottom: 4
-      right: 4
+      top: 0 # 4 4 2 4
+      left: 0
+      bottom: 0
+      right: 0
     widgets:
       left:
         [
           "home",
           "komorebi_workspaces",
-          "traffic",
-          "weather"
+          "active_window",
         ]
       center:
-        ["active_window"]
+        ["clock"]
       right:
         [
+          "cava",
           "media",
           "volume",
-          "clock",
+          "weather",
+          "github",
           "disk",
           "wallpapers",
           "power_menu"
@@ -66,7 +68,7 @@ widgets:
       round_corners: true
       round_corners_type: "normal"
       border_color: ""
-      distance: 10
+      distance: 5
       container_padding: 
         top: 0
         left: 0
@@ -93,17 +95,8 @@ widgets:
         label_default_name: "{index}"
         label_zero_index: false
         hide_empty_workspaces: false
-        hide_if_offline: false
+        hide_if_offline: true
         animation: true
-  traffic:
-    type: "yasb.traffic.TrafficWidget"
-    options:
-      label: "<span>\udb82\udcfa</span> \uea9a  {download_speed}  \ueaa1  {upload_speed}"
-      label_alt: "<span>\udb82\udcfa</span> Download {download_speed} | Upload {upload_speed}"
-      update_interval: 1000
-      callbacks:
-        on_left: 'toggle_label'
-        on_right: 'exec cmd /c Taskmgr'   
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -114,18 +107,29 @@ widgets:
       hide_decimal: true
       location: 'Samsun'
       callbacks:
-        on_left: "toggle_label"
-      icons:
-        sunnyDay: "\udb81\udd99"
-        clearNight: "\udb81\udd99"
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      icons: 
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
         cloudyDay: "\udb81\udd99"
-        cloudyNight: "\udb81\udd99"
-        rainyDay: "\udb81\udd99"
-        rainyNight: "\udb81\udd99"
-        snowyIcyDay: "\udb81\udd99"
-        snowyIcyNight: "\udb81\udd99"
-        blizzard: "\udb81\udd99"
-        default: "\udb81\udd99" 
+        cloudyNight: "\ue311"
+        rainyDay: "\udb81\ude7e"
+        rainyNight: "\udb81\ude7e"
+        snowyIcyDay: "\udb81\udd98"
+        snowyIcyNight: "\udb81\udd98"
+        blizzard: "\uebaa"
+        default: "\udb81\udd99"
+      weather_card: 
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        distance: 6
+        icon_size: 64
   media:
       type: "yasb.media.MediaWidget"
       options:
@@ -173,9 +177,11 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "<span>\udb83\ude17</span>{%a %b %d %H:%M}"
-      label_alt: "<span>\udb83\ude17</span>{%A, %d %B %Y %H:%M}"
+      label: "{%a %b %d %H:%M}"
+      label_alt: "{%A, %d %B %Y %H:%M}"
       timezones: []
+      calendar:
+        alignment: "center"
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -231,3 +237,42 @@ widgets:
           restart: ["\uead2","Restart"]
           hibernate: ["\uf28e","Hibernate"]
           cancel: ["\udb81\udf3a","Cancel"]
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 12
+      gradient: 1
+      reverse: 0
+      sensitivity: 100
+      foreground: "#89b4fa"
+      gradient_color_1: '#74c7ec'
+      gradient_color_2: '#89b4fa'
+      gradient_color_3: '#cba6f7'
+      bars_number: 8
+      bar_spacing: 2
+      bar_width: 4
+      sleep_timer: 0
+      hide_empty: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  github:
+    type: "yasb.github.GithubWidget"
+    options:
+      label: "<span>\ueba1</span>"
+      label_alt: "Notifications {data}" # {data} return number of unread notification
+      token: env # GitHub Personal access tokens (classic) https://github.com/settings/tokens
+      max_notification: 20 # Max number of notification displaying in menu max: 50
+      only_unread: false # Show only unread or all notifications; 
+      max_field_size: 54 # Max characters in title before truncation.
+      update_interval: 300 # Check for new notification in seconds
+      menu:
+        blur: True # Enable blur effect for the menu
+        round_corners: True # Enable round corners for the menu (this option is not supported on Windows 10)
+        round_corners_type: "normal" # Set the type of round corners for the menu (normal, small) (this option is not supported on Windows 10)
+        border_color: "System" # Set the border color for the menu (this option is not supported on Windows 10)
+        alignment: "right"
+        direction: "down"
+        distance: 6

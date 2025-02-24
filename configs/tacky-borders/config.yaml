@@ -17,8 +17,7 @@ global:
   #   - Round: Fully rounded corners
   #   - RoundSmall: Slightly rounded corners
   #   - Or specify any numeric value for a custom radius
-  border_radius: Auto
-  #   - Auto: 8 for me (configured yasb css' to match with these)
+  border_radius: 4
 
   # active_color: the color of the active window's border
   # inactive_color: the color of the inactive window's border
@@ -159,8 +158,20 @@ window_rules:
     name: "Camera Raw 17.1"
     enabled: False
 
+  - match: Title
+    name: "Photoshop"
+    enabled: False
+ 
+  - match: Title
+    name: "Illustrator"
+    enabled: False
+
   - match: Class
     name: "Photoshop"
+    enabled: False
+
+  - match: Class
+    name: "PSFloatC"
     enabled: False
  
   - match: Class
@@ -172,29 +183,19 @@ window_rules:
     enabled: true
     border_radius: Round
     animations:
-      active:
-        - type: ReverseSpiral
-          duration: 5000
-          easing: EaseInOutQuad
-
+      active:          
         - type: Fade
           duration: 200
           easing: EaseInOutQuad
 
       inactive:
-        - type: Spiral
-          duration: 1800
-          easing: EaseInOutQuad
-
         - type: Fade
           duration: 200
           easing: EaseInOutQuad
 
       fps: 165
       enabled: True
-    active_color:
-        colors: ["#94e2d5", "#89dceb", "#cba6f7", "#f38ba8", "#fab387"]
-        direction: 45deg
+    active_color: "#fab387"
         #colors: ["#ff0000", "#89b4fa", "#00ff00"]
         #direction: 45deg
         

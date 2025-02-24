@@ -3,8 +3,8 @@
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
   "cross_monitor_move_behaviour": "Insert",
   "window_hiding_behaviour":"Cloak",
-  "default_workspace_padding": 2,
-  "default_container_padding": 2,
+  "default_workspace_padding": 3,
+  "default_container_padding": 3,
   "remove_titlebar_applications": [
     {
       "kind": "Exe",
@@ -55,30 +55,52 @@
     },
     {
       "kind": "Exe",
-      "id": "ImageGlass.exe",
+      "id": "PicView.exe",
       "matching_strategy": "Equals"
     },
     {
       "kind": "Title",
       "id": "Screenbox",
       "matching_strategy": "Equals"
-    }
-  ],
-  "ignore_rules": [
+    },
+    {
+      "kind": "Exe",
+      "id": "prismlauncher.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Yasb_themes.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "ResourceHacker.exe",
+      "matching_strategy": "Equals"
+    },
     {
       "kind": "Exe",
       "id": "fdm.exe",
       "matching_strategy": "Equals"       
-    },
+    }
+  ],
+  "ignore_rules": [
     {
       "kind": "Exe",
       "id": "Yasb.exe",
       "matching_strategy": "Equals"
     }
   ],
+  "border_overflow_applications": [
+    {
+      "kind": "Exe",
+      "id": "fdm.exe",
+      "matching_strategy": "Equals"
+    }
+  ],
   "mouse_follows_focus": false,
   "transparency": true,
-  "transparency_alpha": 240,
+  "transparency_alpha": 220,
   "transparency_ignore_rules": [
     {
       "kind": "Title",
@@ -102,22 +124,29 @@
     },
     {
       "kind": "Exe",
-      "id": "Photoshop.exe",
-      "matching_strategy": "Equals"
-    },
-    {
-      "kind": "Exe",
       "id": "Illustrator.exe",
       "matching_strategy": "Equals"
     }
   ],
   "animation": {
     "enabled":true,
-    "style": "EaseOutBack",
-    "fps": 120,
-    "duration": 400
+    "fps": 165,
+    "duration": 400,
+      "style": {
+        "movement":"EaseOutBack",
+        "transparency": "Linear"
+      }
   },
   "border": false,
+  "border_implementation": "Komorebi",
+  "border_style": "Rounded",
+  "border_width": 2,
+  "border_colours": {
+    "single": "#94e2d5",
+    "unfocused": "#45475a",
+    "floating": "#fab387",
+    "stack": "#cba6f7"
+  },  
   "stackbar": {
     "height": 25,
     "mode": "Never",
@@ -158,14 +187,12 @@
         },
         {
           "name": "IV",
-          "layout": "BSP",
           "workspace_rules":[
 
           ]
         },
         {
-          "name": "V",
-          "layout": "BSP"
+          "name": "V"
         }
       ]
     }
