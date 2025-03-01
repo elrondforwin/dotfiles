@@ -14,7 +14,7 @@ bars:
       position: "top"
       center: false
     blur_effect:
-      enabled: true
+      enabled: false
       acrylic: false
       dark_mode: true
       round_corners: false
@@ -27,10 +27,10 @@ bars:
       width: "100%"
       height: 30
     padding:
-      top: 0 # 4 4 2 4
-      left: 0
+      top: 6 # 4 4 2 4
+      left: 6
       bottom: 0
-      right: 0
+      right: 6
     widgets:
       left:
         [
@@ -39,7 +39,7 @@ bars:
           "active_window",
         ]
       center:
-        ["clock"]
+        ["clock", "apps"]
       right:
         [
           "cava",
@@ -101,11 +101,13 @@ widgets:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
-      label_alt: "<span>{icon}</span> {location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: '24b6c2cda6d84066b0304531241908'
-      update_interval: 600 #Update interval in seconds, Min 600
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
+      show_alerts: true
+      update_interval: 600 # Update interval in seconds, Min 600 seconds
       hide_decimal: true
-      location: 'Samsun'
+      units: "metric" # Can be 'metric' or 'imperial'
+      location: "Samsun" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
       callbacks:
         on_left: "toggle_card"
         on_middle: "do_nothing"
@@ -120,7 +122,7 @@ widgets:
         snowyIcyDay: "\udb81\udd98"
         snowyIcyNight: "\udb81\udd98"
         blizzard: "\uebaa"
-        default: "\udb81\udd99"
+        default: "\uebaa"
       weather_card: 
         blur: True
         round_corners: True
@@ -276,3 +278,32 @@ widgets:
         alignment: "right"
         direction: "down"
         distance: 6
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      animation:
+        enabled: true
+      icon_size: 14
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  apps:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8
+      label: "{data}"
+      app_list:
+        - { icon: "\uf0a2", launch: "notification_center" }
+        - { icon: "\uf422", launch: "launcher" }
+        - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
+        - { icon: "\uf489", launch: "wt" }

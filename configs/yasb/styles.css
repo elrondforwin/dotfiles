@@ -1,4 +1,4 @@
- /*VARIABLES AND SOME DEFAULT SETTINGS*/
+/*VARIABLES AND SOME DEFAULT SETTINGS*/
 :root {
     --rosewater: #f5e0dc;
     --flamingo: #f2cdcd;
@@ -44,12 +44,13 @@
 .yasb-bar {
 	padding: 0;
 	margin: 0;
-    background-color: var(--base);
+    background-color: var(--mantle);
+    border-radius: 12px;
 }
 .widget {
     padding: 0 4px;
     margin: 0 4px;
-    border-radius: 0px;
+    border-radius: 8px;
     border: 1px solid rgba(128, 128, 128, 0);
 }
 .widget .icon {
@@ -60,6 +61,7 @@
 }
 /*WIDGET*/
 .home-widget {
+    padding-right: 0px;
     padding-bottom: 1px;
 }
 /*HOME WIDGET DROPDOWN*/
@@ -67,7 +69,6 @@
     background-color: var(--mantle);
     padding: 0;
     margin-left: 0px;
-    border: 1px var(--teal) solid;
 }
 .home-menu .menu-item {
     padding: 6px 48px 7px 16px;
@@ -121,7 +122,7 @@
     font-size: 14px;
     font-family: Bahnschrift;
 }
-/* WEATHER DROPDOWN */
+/*WEATHER WIDGET DROPDOWN*/
 .weather-card {
     background-color: rgba(17, 17, 27, 0.5);
 }
@@ -132,7 +133,6 @@
 }
 .weather-card-today .label {
     font-size: 12px;
-    font-family: Segoe UI;
 }
 .weather-card-today .label.location {
     font-size: 24px;
@@ -154,7 +154,6 @@
 }
 .weather-card-day .label {
     font-size: 12px;
-    font-family: Segoe UI;
 }
 /*ACTIVE WINDOW WIDGET*/
 .active-window-widget .label {
@@ -173,7 +172,6 @@
 /*CLOCK - CALENDAR WIDGET DROPDOWN*/
 .calendar {
     background-color: var(--mantle);
-    border: 1px solid var(--teal);
 }
 .calendar .calendar-table,
 .calendar .calendar-table::item {
@@ -216,8 +214,7 @@
 }
 /*DISK DROPDOWN*/
 .disk-group {
-    background-color: var(--mantle);   
-    border: 1px solid var(--teal);
+    background-color: var(--mantle);    
 }
 .disk-group-row {
     min-width: 220px;
@@ -225,7 +222,7 @@
     max-height: 40px;
     margin: 0;
     padding: 0;
-    border-radius: 0px;
+    border-radius: 6px;
     border: 1px solid rgba(128, 128, 128, 0);
 }
 .disk-group-row:hover {
@@ -236,11 +233,11 @@
     max-height: 8px;
     border:0px solid rgba(128, 128, 128, 0);
     background-color: rgba(148, 226, 213, 0.3);
-    border-radius: 0px;
+    border-radius: 4px;
 }
 .disk-group-label-bar::chunk{
     background-color: rgba(148, 226, 213, 1);
-    border-radius: 0px;
+    border-radius: 4px;
 }
 .disk-group-label {
     font-size: 13px;
@@ -273,7 +270,7 @@
     padding:6px 8px 6px 4px;
     margin: 2px 0;
     font-size: 14px;
-    border-radius: 0px;
+    border-radius: 4px;
 }
 .audio-container .device.selected {
     background-color: rgba(255, 255, 255, 0.085);
@@ -324,7 +321,7 @@
 }
 .wallpapers-gallery-image {
     border: 4px solid transparent;
-    border-radius: 0px;
+    border-radius: 10px;
 }
 .wallpapers-gallery-image:hover {
     border: 4px solid rgb(66, 68, 83);
@@ -352,7 +349,7 @@
 	padding: 0;
 	width: 160px;
 	height: 240px;
-	border-radius: 0px;
+	border-radius: 4px;
 	background-color: rgba(41, 42, 58, 0.75);
 	font-family: "Bahnscrift", Tahoma, Geneva, Verdana, sans-serif;
 	color: white;
@@ -454,4 +451,33 @@
 }
 .github-menu .contents .item.new .icon {
     color: #3fb950;
+}
+/*TASKBAR*/
+.taskbar-widget {
+    background-color: var(--surface1);
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 10px;
+}
+.taskbar-widget .app-icon {
+    padding: 0 6px;
+    margin: 0px;
+}
+/*APPS WIDGET*/
+.apps-widget {
+    padding: 0;
+    padding-left: -4px;
+    padding-right: -2px;
+}
+.apps-widget .label {
+	font-size: 16px;
+	padding: 0 1px;
+    color: var(--subtext0);
+}
+.apps-widget .label:hover {
+	color: var(--text);
+}
+.apps-widget .widget-container {
+	margin: 4px 6 4px 6;
+	border-radius: 8px;
 }

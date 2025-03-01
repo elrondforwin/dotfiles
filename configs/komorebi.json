@@ -1,23 +1,11 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.33/schema.json",
-  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+ "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.33/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/.config/komorebi/applications.json",
   "cross_monitor_move_behaviour": "Insert",
   "window_hiding_behaviour":"Cloak",
-  "default_workspace_padding": 3,
-  "default_container_padding": 3,
-  "remove_titlebar_applications": [
-    {
-      "kind": "Exe",
-      "id": "wt.exe",
-      "matching_strategy": "Equals"
-    }
-  ],
+  "default_workspace_padding": 2,
+  "default_container_padding": 2,
   "floating_applications": [
-    {
-      "kind": "Exe",
-      "id": "explorer.exe",
-      "matching_strategy": "Equals"
-    },
     {
       "kind": "Exe",
       "id": "quick-picture-viewer.exe",
@@ -82,7 +70,13 @@
       "kind": "Exe",
       "id": "fdm.exe",
       "matching_strategy": "Equals"       
+    },
+    {
+      "kind": "Class",
+      "id": "RarReminder",
+      "matching_strategy": "Equals"       
     }
+
   ],
   "ignore_rules": [
     {
@@ -91,15 +85,8 @@
       "matching_strategy": "Equals"
     }
   ],
-  "border_overflow_applications": [
-    {
-      "kind": "Exe",
-      "id": "fdm.exe",
-      "matching_strategy": "Equals"
-    }
-  ],
   "mouse_follows_focus": false,
-  "transparency": true,
+  "transparency": false,
   "transparency_alpha": 220,
   "transparency_ignore_rules": [
     {
@@ -129,7 +116,7 @@
     }
   ],
   "animation": {
-    "enabled":true,
+    "enabled":false,
     "fps": 165,
     "duration": 400,
       "style": {
@@ -140,7 +127,7 @@
   "border": false,
   "border_implementation": "Komorebi",
   "border_style": "Rounded",
-  "border_width": 2,
+  "border_width": 6,
   "border_colours": {
     "single": "#94e2d5",
     "unfocused": "#45475a",
@@ -175,21 +162,14 @@
         },
         {
           "name": "II",
-          "layout": "BSP",
-          "workspace_rules": [
-          ]
+          "layout": "BSP"
         },
         {
           "name": "III",
-          "layout": "BSP",
-          "workspace_rules":[
-          ]
+          "layout": "BSP"
         },
         {
-          "name": "IV",
-          "workspace_rules":[
-
-          ]
+          "name": "IV"
         },
         {
           "name": "V"
