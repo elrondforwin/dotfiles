@@ -12,12 +12,12 @@ https://www.youtube.com/watch?v=weYnACBLg1w
 - **WM:** [komorebi](https://github.com/LGUG2Z/komorebi) with my [config](configs/komorebi.json)
 - **Window Borders:** [tacky-borders](https://github.com/lukeyou05/tacky-borders) with my [config](configs/tacky-borders/config.yaml)
 - **Theme:** [Niivu's Catppuccin](https://www.deviantart.com/niivu/art/Catppuccin-for-Windows-11-1076249390) (patched with [SecureUXTheme](https://github.com/namazso/SecureUxTheme))
-- **Wallpaper:** [All Wallpapers from orangci's walls repo](https://github.com/orangci/walls), [Mine](https://github.com/orangci/walls/blob/main/black-hole.png),
-- **Wallpaper showed in the video:** [Minecraft Sunset 4K](https://steamcommunity.com/sharedfiles/filedetails/?id=3270848940)
+- **Wallpaper(s):** [Walls](walls) from a lot of places (like random walls repos, and from reddit)
+- **Wallpaper showed in the showcase video:** [Minecraft Sunset 4K](https://steamcommunity.com/sharedfiles/filedetails/?id=3270848940)
 - **Context Menu:** [Nilesoft Shell](https://github.com/moudey/Shell) with my [config](configs/nilesoft-shell/theme.nss)
 - **Hatsune Miku in the explorer:** [explorertool](https://github.com/Maplespe/explorerTool)
-- **Icon Pack:** [Catppuccin Teal](https://github.com/niivu/resource-redirect-icon-themes/blob/main/Resource%20Redirect%20themes/Catppuccin%20teal.zip) applied with [Windhawk's Resource Redirect](https://windhawk.net/mods/icon-resource-redirect) (note that when I took the screenshots, icon pack was not installed.)
-- **Taskbar:** [StartAllBack](https://www.startallback.com/) with my [settings](settings/startallback)
+- **Icon Pack:** [Catppuccin Teal](https://github.com/niivu/resource-redirect-icon-themes/blob/main/Resource%20Redirect%20themes/Catppuccin%20teal.zip) applied with [Windhawk's Resource Redirect](https://windhawk.net/mods/icon-resource-redirect)
+- **Taskbar and Start Menu:** Windhawk with my configs. (They are taken from [there](https://github.com/ashish0kumar/windots/tree/main/.config/windhawk), I edited some of them a little bit.)
 - **Spotify:** Spiced up with [spicetify](https://spicetify.app/), applied a theme named [text](https://imgur.com/a/OysmIjthttps://imgur.com/a/OysmIjt) and selected CatppuccinMauve option in the marketplace tab
 
 ## **Other Tweaks and Notes**
