@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=weYnACBLg1w
 - **Context Menu:** [Nilesoft Shell](https://github.com/moudey/Shell) with my [config](configs/nilesoft-shell/theme.nss)
 - **Hatsune Miku in the explorer:** [explorertool](https://github.com/Maplespe/explorerTool)
 - **Icon Pack:** [Catppuccin Teal](https://github.com/niivu/resource-redirect-icon-themes/blob/main/Resource%20Redirect%20themes/Catppuccin%20teal.zip) applied with [Windhawk's Resource Redirect](https://windhawk.net/mods/icon-resource-redirect)
-- **Taskbar and Start Menu:** Windhawk with my configs. (They are taken from [there](https://github.com/ashish0kumar/windots/tree/main/.config/windhawk), I edited some of them a little bit.)
+- **Taskbar and Start Menu:** Windhawk with [my configs.](configs/windhawk/) (They are taken from [there](https://github.com/ashish0kumar/windots/tree/main/.config/windhawk), I edited some of them a little bit.)
 - **Spotify:** Spiced up with [spicetify](https://spicetify.app/), applied a theme named [text](https://imgur.com/a/OysmIjthttps://imgur.com/a/OysmIjt) and selected CatppuccinMauve option in the marketplace tab
 
 ## **Other Tweaks and Notes**
