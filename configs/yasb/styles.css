@@ -86,28 +86,35 @@
 }
 /*KOMOREBI WORKSPACES WIDGET*/
 .komorebi-workspaces {
-    padding: 0 0px;
+    margin-left: 4cap;
+    margin-right: -4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.komorebi-workspaces .offline-status {
+    color: #627199;
+    font-size: 12px;
+    padding: 0 4px;
+    font-weight: 600;
 }
 .komorebi-workspaces .ws-btn {
-	font-size: 14px;
     border: none;
-    color: #6c7086;
-	margin: 0 0px 0 0px;
-    height: 30px;
-    padding: 0 12px;
-    border-bottom: 1px solid rgba(128, 128, 128, 0);
-}
-.komorebi-workspaces .ws-btn:hover {
-    color: #7f849c;
-    border-bottom: 1px solid #7f849c;
+    background-color: #45475a;
+    margin: 0px 4px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    height: 10px;
+    width: 10px;
 }
 .komorebi-workspaces .ws-btn.populated {
-	color: #b4befe;
+    background-color: #6c7086;
 }
 .komorebi-workspaces .ws-btn.active {
-    color: #94e2d5;
-    font-weight: 900;
-    border-bottom-color: #94e2d5;
+    color: rgba(149, 177, 255, 0);
+    background-color: #a6adc8;
+    height: 12px;
+    border-radius: 4px;
 }
 /*WEATHER WIDGET*/
 .weather-widget {

@@ -4,12 +4,17 @@
   "cross_monitor_move_behaviour": "Insert",
   "window_hiding_behaviour":"Cloak",
   "default_workspace_padding": 2,
-  "default_container_padding": 2,
+  "default_container_padding": 1,
   "floating_applications": [
+    {
+      "kind": "Title",
+      "id": "Write:",
+      "matching_strategy": "StartsWith"
+    },
     {
       "kind": "Exe",
       "id": "quick-picture-viewer.exe",
-      "matching_strategy": "Equals"       
+      "matching_strategy": "Equals"
     },
     {
       "kind": "Exe",
@@ -75,8 +80,12 @@
       "kind": "Class",
       "id": "RarReminder",
       "matching_strategy": "Equals"       
+    },
+    {
+      "kind": "Class",
+      "id": "BootstrapUpdateUIClass",
+      "matching_strategy": "Equals"
     }
-
   ],
   "ignore_rules": [
     {
@@ -87,7 +96,7 @@
   ],
   "mouse_follows_focus": false,
   "transparency": false,
-  "transparency_alpha": 220,
+  "transparency_alpha": 240,
   "transparency_ignore_rules": [
     {
       "kind": "Title",
@@ -116,18 +125,18 @@
     }
   ],
   "animation": {
-    "enabled":false,
-    "fps": 165,
+    "enabled": false,
+    "fps": 120,
     "duration": 400,
       "style": {
         "movement":"EaseOutBack",
         "transparency": "Linear"
       }
   },
-  "border": false,
+  "border": true,
   "border_implementation": "Komorebi",
-  "border_style": "Rounded",
-  "border_width": 6,
+  "border_style": "System",
+  "border_width": 3,
   "border_colours": {
     "single": "#94e2d5",
     "unfocused": "#45475a",
@@ -169,10 +178,12 @@
           "layout": "BSP"
         },
         {
-          "name": "IV"
+          "name": "IV",
+          "layout": "BSP"
         },
         {
-          "name": "V"
+          "name": "V",
+          "layout": "BSP"
         }
       ]
     }
